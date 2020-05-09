@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\begin{document}
+    \section*{Question 1}
+    If a is an n-bit string then there are $2^n$ possible values of a. Each value of a has
+    a certain number of b's such that $a\cdot b = 1$ and $a\cdot b = 0$ for the rest.
+    $$a\cdot b = a_1\oplus b_1 \oplus a_2\oplus b_2 \oplus a_3\oplus b_3 \oplus...\oplus a_n\oplus b_n$$
+    According to the definition of $a\cdot b$ the following cases are possible:
+    \begin{itemize}
+        \item $a \cdot b = 0$ a$\&$b have an even number of 1's in the same positions
+        \item $a \cdot b = 1$ otherwise
+    \end{itemize}
+    Assuming that a string has an k number of 1's then there are $2^k$ number of possible combinations of those 1's
+    and since there will, resultantly be $n-k$ number of 0's there will be $2^{n-k}$ number of possible combinations 
+    of those 0's. This can be verified as the total number of ways the 1's and 0's can be chosen is $2^{n-k}\cdot 2^k = 2^n$\\\\
+    Out of the $2^k$ ways, half of combinations will have an even number of 1's therefore the total number of combinations with an odd 
+    number of 1's is $2^{k-1}\cdot 2^{n-k}$\\\\
+    Therefore, the probability of choosing an even or odd number of ones equals can be found by 
+    divinding the total number of ways to get an even or odd number of 1's by the total number of ways we can choose
+    an n-bit string: $$\frac{2^{k-1}\cdot 2^{n-k}}{2^n} = \frac{2^{n-1}}{2^n} = \frac{1}{2}$$
+    Therefore, $$P(a\cdot b = 1) = P(a\cdot b = 0) = \frac{1}{2}$$
+
+
+\end{document}
+
+
